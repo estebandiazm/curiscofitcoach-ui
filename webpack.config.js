@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
@@ -15,6 +14,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.ts', '.tsx']
+    },
+    optimization: {
+        runtimeChunk: 'single'
     },
     module: {
         rules: [
@@ -60,14 +62,6 @@ module.exports = {
             templateParameters: {
                 manifest: path.resolve(__dirname, 'public', 'manifest.json')
             }
-        }),
-        // new AddAssetHtmlPlugin({
-        //     filepath: path.resolve(__dirname, 'public', 'manifest.json')
-        // }),
-        // new ChunkManifestPlugin({
-        //     filename: 'manifest.json',
-        //     manifestVariable: 'webpackManifest',
-        //     inlineManifest: false
-        // }),
+        })
     ]
 };
