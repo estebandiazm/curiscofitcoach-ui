@@ -15,9 +15,6 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.ts', '.tsx']
     },
-    optimization: {
-        runtimeChunk: 'single'
-    },
     module: {
         rules: [
             {
@@ -58,10 +55,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
-            template: path.resolve(__dirname, 'public', 'index.html'),
-            templateParameters: {
-                manifest: path.resolve(__dirname, 'public', 'manifest.json')
-            }
+            template: path.resolve(__dirname, 'public', 'index.html')
         })
     ]
 };
