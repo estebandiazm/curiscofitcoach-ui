@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
 module.exports = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
@@ -23,7 +24,7 @@ module.exports = {
                 use: ['ts-loader']
             },
             {
-                test: /\.s(a|c)ss$/,
+                test: /\.s[ac]ss$/,
                 use: [
                     'style-loader',
                     {
@@ -54,7 +55,19 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'public', 'index.html')
-        })
+            favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
+            template: path.resolve(__dirname, 'public', 'index.html'),
+            templateParameters: {
+                manifest: path.resolve(__dirname, 'public', 'manifest.json')
+            }
+        }),
+        // new AddAssetHtmlPlugin({
+        //     filepath: path.resolve(__dirname, 'public', 'manifest.json')
+        // }),
+        // new ChunkManifestPlugin({
+        //     filename: 'manifest.json',
+        //     manifestVariable: 'webpackManifest',
+        //     inlineManifest: false
+        // }),
     ]
 };
