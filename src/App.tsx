@@ -1,14 +1,14 @@
 import React from 'react';
 
 import './App.sass';
-import Header from "./components/header/Header";
+import Home from "./components/home/Home";
 
 export default class App extends React.Component {
 
     render() {
         return (
             <div className="App">
-                    <Header/>
+                    <Home/>
             </div>
         )
     }
