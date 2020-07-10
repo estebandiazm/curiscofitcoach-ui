@@ -1,45 +1,38 @@
 import React, {Component} from 'react'
-import {Container, Row, Col, Button} from "react-bootstrap";
+import {Container, Row} from "react-bootstrap";
 import './Plans.sass'
+import PlanCard from "./plan-card/PlanCard";
 
 export default class Plans extends Component {
 
     public state = {
         plans: [
-            {name: 'plan A', status: 'show', details: false},
-            {name: 'plan B', status: 'show', details: false},
-            {name: 'plan C', status: 'show', details: false}
+            {title: 'Month', status: 'show', details: false, description: 'description of the plan'},
+            {title: 'Three month', status: 'show', details: false, description: 'description of the plan'},
+            {title: 'Training Online', status: 'show', details: false, description: 'description of the plan'}
         ],
         showDetails: false
     }
 
-    showPlanDetails(name: string) {
+    showPlanDetails(name: string): void {
+        console.log(`state`, this.state)
         console.log(`click in ${name}`)
         this.state.plans.forEach(plan => {
-            plan.details = plan.details? false : name === plan.name;
+            plan.details = plan.details? false : name === plan.title;
         })
         this.setState(this.state)
         console.log(this.state);
     }
 
     render() {
-        let size = (details: boolean) => {
-            if (details) {
-                return {'xs': 10}
-            } else {
-                return {}
-            }
-        };
         return (
             <Container fluid className="plans-panel">
                 <Row>
                     {this.state.plans
                         .filter(plan => plan.status === 'show')
                         .map((plan: any) => {
-                            return <Col className={ `plan-card`} key={plan.name} {...size(plan.details)} >
-                                {plan.name} <Button
-                                onClick={this.showPlanDetails.bind(this, plan.name)}>Details</Button>
-                            </Col>
+                            return <PlanCard title={plan.title} description={plan.description}  showDetails={plan.details}
+                                             onClick={this.showPlanDetails.bind(this, plan.title)} />
                         })}
                 </Row>
             </Container>
