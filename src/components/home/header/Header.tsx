@@ -8,6 +8,7 @@ import {connect} from "react-redux";
 import {SingInState} from "../../../store/types";
 import {AppState} from "../../../store";
 import {ThunkDispatch} from "redux-thunk";
+import {Link} from "react-router-dom";
 
 interface HeaderProps {}
 
@@ -25,8 +26,8 @@ export class Header extends React.Component<Props, HeaderState> {
     render() {
         console.log(this.props.singIn)
         return (
-            <Navbar bg="dark" expand="lg" variant="dark">
-                <Navbar.Brand href="#home">Curisco Fit Coach</Navbar.Brand>
+            <Navbar bg="dark" expand="lg" variant="dark" fixed={'top'}>
+                <Navbar.Brand as={Link} to='/#'>Curisco Fit Coach</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -47,12 +48,12 @@ interface LinkDispatchProps {
     singInAction: (singIn: boolean) => void
 }
 
-const mapStateToProps = (state: AppState, props: HeaderProps): SingInState => ({
+const mapStateToProps = (state: AppState): SingInState => ({
     singIn: state.sing.singIn,
     timestamp: state.sing.timestamp
 });
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AppActions>, props: HeaderProps): LinkDispatchProps => ({
+const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AppActions>): LinkDispatchProps => ({
     singInAction: (singIn: boolean) => dispatch(singInAction(singIn))
 });
 

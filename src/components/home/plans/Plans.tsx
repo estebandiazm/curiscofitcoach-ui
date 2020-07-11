@@ -26,12 +26,12 @@ export default class Plans extends Component {
 
     render() {
         return (
-            <Container fluid className="plans-panel">
+            <Container id='plans' fluid className="plans-panel">
                 <Row>
                     {this.state.plans
                         .filter(plan => plan.status === 'show')
                         .map((plan: any) => {
-                            return <PlanCard title={plan.title} description={plan.description}  showDetails={plan.details}
+                            return <PlanCard title={plan.title} key={plan.title} description={plan.description}  showDetails={plan.details}
                                              onClick={this.showPlanDetails.bind(this, plan.title)} />
                         })}
                 </Row>
