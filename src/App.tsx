@@ -1,15 +1,17 @@
 import React from 'react';
+import {Provider} from "react-redux";
 
 import './App.sass';
-import Header from "./components/header/Header";
+import {store} from './store'
+import AppRouter from "./router";
 
-export default class App extends React.Component {
 
-    render() {
-        return (
-            <div className="App">
-                    <Header/>
-            </div>
-        )
-    }
+const App: React.FC = () => {
+
+    return (
+        <Provider store={store}>
+            <AppRouter/>
+        </Provider>
+    )
 }
+export default App;
