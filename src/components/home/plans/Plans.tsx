@@ -15,8 +15,6 @@ export default class Plans extends Component {
     }
 
     showPlanDetails(name: string): void {
-        console.log(`state`, this.state)
-        console.log(`click in ${name}`)
         this.state.plans.forEach(plan => {
             plan.details = plan.details? false : name === plan.title;
         })
