@@ -24,7 +24,6 @@ export class Header extends React.Component<Props, HeaderState> {
     }
 
     render() {
-        console.log(this.props.singIn)
         return (
             <Navbar bg="dark" expand="lg" variant="dark" fixed={'top'}>
                 <Navbar.Brand as={Link} to='/#'>Curisco Fit Coach</Navbar.Brand>
