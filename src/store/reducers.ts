@@ -17,8 +17,7 @@ export function singReducer(state = initialState, action: SingActionTypes) {
     }
 }
 
-export function subscribeNewsReducer(state = {}, action: SubscribeNewsTypes) {
-    console.log(action)
+export function subscribeNewsReducer(state = {show: true, email: 'NA'}, action: SubscribeNewsTypes) {
     switch (action.type) {
         case 'SUBSCRIBE_NEWS':
             return {
@@ -26,6 +25,6 @@ export function subscribeNewsReducer(state = {}, action: SubscribeNewsTypes) {
                 email: action.payload.email
             }
         default:
-            return {show: true, email: 'NA'}
+            return state
     }
 }

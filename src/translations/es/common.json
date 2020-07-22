@@ -1,0 +1,32 @@
+{
+  "sing": {
+    "out": {
+      "button": "Cerrar sesión"
+    },
+    "in": {
+      "button": "Iniciar Sesión"
+    }
+  },
+  "menu": {
+    "programs": "Programas",
+    "tips": "Consejos",
+    "questions": "Preguntas",
+    "supplements": "Suplementos",
+    "contact": "Contacto"
+  },
+  "subscribeNews": {
+    "title": "Regristrate a Noticias",
+    "message": "Suscribite a nuestras noticias y no te pierdas de planes, los ultimos consejos y nuestras promociones.",
+    "email": {
+      "label":"Correo Electrónico",
+      "placeholder": "Ingresa correo",
+      "note": "Nunca compartiremos tu correo con alguién más.",
+      "feedback": "Correcto!"
+    },
+    "terms": {
+      "label": "Estas de acuerdo con los terminos y condiciones",
+      "feedback": "Debes estar de acuerdo con los terminos y condiciones."
+    },
+    "buttonText": "Suscribete"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "sing": {
+    "out": {
+      "button": "Sing Out"
+    },
+    "in": {
+      "button": "Sing In"
+    }
+  },
+  "menu": {
+    "programs": "Programs",
+    "tips": "Tips",
+    "questions": "Questions",
+    "supplements": "Supplements",
+    "contact": "Contact"
+  },
+  "subscribeNews": {
+    "title": "SIGN UP NEWSLETTER",
+    "message": "Subscribe to our newsletters and don’t miss new plans, the latest fitness tips and our promotions.",
+    "email": {
+      "label":"Email address",
+      "placeholder": "Enter email",
+      "note": "We'll never share your email with anyone else.",
+      "feedback": "Looks good!"
+    },
+    "terms": {
+      "label": "Agree to terms and conditions",
+      "feedback": "You must agree before submitting."
+    },
+    "buttonText": "Subscribe"
+  }
+}

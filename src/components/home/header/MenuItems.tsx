@@ -1,38 +1,26 @@
 import React from 'react';
-import Nav from "react-bootstrap/Nav";
+import Nav from 'react-bootstrap/Nav';
 import {HashLink} from 'react-router-hash-link';
+import {useTranslation} from 'react-i18next';
 
-export default class MenuItems extends React.Component {
+const MenuItems = () => {
 
-    navTo(elementName: string) {
-        console.log(`click nav: ${elementName}`)
-        let element = document.getElementById(elementName);
-        if (element !== null) {
-            console.log('Entro al scrill')
-            let offsetTop  = element.offsetTop;
-            window.scrollTo({
-                top: offsetTop-100,
-                behavior: "smooth"
-            });
-        }
-    }
-
-    render() {
+    const {t} = useTranslation('common');
         const menuItems = [
-            {name: 'Programas', componentId: 'plans'},
-            {name: 'Tips', componentId: 'tips'},
-            {name: 'Preguntas', componentId: 'questions'},
-            {name: 'Suplementos', componentId: 'supplements'},
-            {name: 'Contacto', componentId: ''}
+            {name: 'menu.programs', componentId: 'plans'},
+            {name: 'menu.tips', componentId: 'tips'},
+            {name: 'menu.questions', componentId: 'questions'},
+            {name: 'menu.supplements', componentId: 'supplements'},
+            {name: 'menu.contact', componentId: 'contact'}
         ]
 
         return (
             <Nav className="menu-items">
                 {menuItems.map((value, index) => {
-                    return <HashLink smooth className='nav-link' key={index.toString()} to={`/#${value.componentId}`}>{value.name}</HashLink>
+                    return <HashLink smooth className='nav-link' key={index.toString()} to={`/#${value.componentId}`}>{t(value.name)}</HashLink>
                 })}
             </Nav>
         )
-    }
-
 }
+
+export default MenuItems;
