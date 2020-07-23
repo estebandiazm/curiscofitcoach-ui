@@ -51,6 +51,14 @@ module.exports = {
                         encoding: 'base64'
                     }
                 }
+            },
+            {
+                test: /\.(woff(2)?|ttf|gif|eot)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
             }
         ]
     },

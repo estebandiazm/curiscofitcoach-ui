@@ -5,7 +5,6 @@ const style = {
     backgroundImage: 'url("https://cdn.pixabay.com/photo/2020/05/23/18/19/kettlebell-5210887_960_720.jpg")',
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
-    width: '100vw',
     height: '50vh'
 }
 
