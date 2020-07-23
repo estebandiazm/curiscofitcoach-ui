@@ -7,7 +7,7 @@ import Information from './information/Information';
 import Plans from './plans/Plans';
 import Footer from './footer/Footer';
 import SubscribeNewsModal from './news/SubscribeNewsModal';
-import Evidences from './evidences/Evidences';
+import Cases from './cases/Cases';
 
 export default class Home extends Component {
     render() {
@@ -17,7 +17,7 @@ export default class Home extends Component {
                 <Row> <Col><Promo/></Col> </Row>
                 <Row> <Col><Information/></Col> </Row>
                 <Row> <Col><Plans/></Col> </Row>
-                <Row> <Col><Evidences/></Col> </Row>
+                <Row> <Col><Cases/></Col> </Row>
                 <Row> <Col><Footer/></Col> </Row>
                 <SubscribeNewsModal/>
             </Container>

@@ -28,5 +28,8 @@
       "feedback": "Debes estar de acuerdo con los terminos y condiciones."
     },
     "buttonText": "Suscribete"
+  },
+  "cases": {
+    "title":"Casos de éxito"
   }
 }

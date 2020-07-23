@@ -1,8 +1,11 @@
 import React from 'react'
 import Slider from 'react-slick';
 import {Card} from 'react-bootstrap';
+import {useTranslation} from 'react-i18next';
 
-const Evidences = () => {
+const Cases = () => {
+
+    const {t} = useTranslation('common');
 
     const settings = {
         arrows: true,
@@ -55,7 +58,7 @@ const Evidences = () => {
 
     return (
         <div style={{margin: '30px'}}>
-            <h2> Single Item</h2>
+            <h2> {t('cases.title')}</h2>
             <Slider {...settings} >
                 {buildCards()}
                 {buildCards()}
@@ -69,4 +72,4 @@ const Evidences = () => {
     );
 }
 
-export default Evidences
+export default Cases

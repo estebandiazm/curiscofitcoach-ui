@@ -28,5 +28,8 @@
       "feedback": "You must agree before submitting."
     },
     "buttonText": "Subscribe"
+  },
+  "cases": {
+    "title":"Success Cases"
   }
 }
