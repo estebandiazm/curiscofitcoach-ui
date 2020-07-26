@@ -1,41 +1,40 @@
-import React, {Component} from 'react'
-import {Col, Container, Row} from "react-bootstrap";
-import InstagramIcon from '../../../icons/Instagram.svg'
-import WhatsappIcon from '../../../icons/Whatsapp.svg'
+import React from 'react';
+import {Col, Container, Row} from 'react-bootstrap';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faCcPaypal, faWhatsapp} from '@fortawesome/free-brands-svg-icons';
+import {faCopyright} from '@fortawesome/free-regular-svg-icons';
+import './Footer.sass';
+import {useTranslation} from 'react-i18next';
 
-const iconStyle = {
-    width: '2em',
-    height: '2em',
-    cursor: 'pointer'
-}
+const Footer = () => {
 
-export default class Footer extends Component {
-
-    redirectPage(url: string) {
-        window.open(url, '_blank');
+    const {t} = useTranslation('common')
+    const redirectPage = () => {
+        window.open('https://wa.me/message/QCUOYE34CYZSM1', '_blank');
     }
 
-    render() {
-        return (
-            <Container id="footer" fluid>
-                <Row>
-                    <Col className='d-flex justify-content-center'>
+    return (
+        <Container id="footer" fluid>
+            <Row>
+                <Col>
+                    <div className="d-flex justify-content-between footer">
                         <div className="d-flex flex-column">
-                            <h5>Contact Information</h5>
-                            <div className="d-flex justify-content-around">
-                                <img src={InstagramIcon} style={iconStyle} alt='Instagran logo'
-                                     onClick={this.redirectPage.bind(this,'https://www.instagram.com/curisconago/')}/>
-                                <img src={WhatsappIcon} style={iconStyle} alt='Instagran logo'
-                                     onClick={this.redirectPage.bind(this, 'https://wa.link/i76t78')}/>
+                            <span className={'copyright'}><FontAwesomeIcon icon={faCopyright} /> Copy Right</span>
+                            <span className={'powered'}>powered by Juan Esteban Díaz Engineer</span>
+                        </div>
+                        <div className="payment-methods">
+                            <span>{t('footer.paymentMethods')}</span>
+                            <div className="methods-icons">
+                                <FontAwesomeIcon icon={faCcPaypal}/>
                             </div>
                         </div>
-                    </Col>
-                </Row>
-                <div className='text-right font-weight-lighter'>
-                    Iconos diseñados por <a href="https://www.flaticon.es/autores/pixel-perfect" title="Pixel perfect">Pixel
-                    perfect</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a>
-                </div>
-            </Container>
-        );
-    }
+                        <FontAwesomeIcon icon={faWhatsapp} className='whatsapp-icon'
+                                         onClick={redirectPage}/>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
+    );
 }
+
+export default Footer;

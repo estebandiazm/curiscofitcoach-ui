@@ -1,4 +1,7 @@
 {
+  "header": {
+    "follow": "Siguenos"
+  },
   "sing": {
     "out": {
       "button": "Cerrar sesión"
@@ -31,5 +34,8 @@
   },
   "cases": {
     "title":"Casos de éxito"
+  },
+  "footer": {
+    "paymentMethods": "Métodos de pago"
   }
 }

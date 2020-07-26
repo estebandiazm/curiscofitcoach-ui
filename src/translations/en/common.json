@@ -1,4 +1,7 @@
 {
+  "header": {
+    "follow": "Follow us"
+  },
   "sing": {
     "out": {
       "button": "Sing Out"
@@ -31,5 +34,8 @@
   },
   "cases": {
     "title":"Success Cases"
+  },
+  "footer": {
+    "paymentMethods": "Payment Methods"
   }
 }

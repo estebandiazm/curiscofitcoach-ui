@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.sass'
 
 import MenuItems from './MenuItems';
-import {Button, Form, Navbar, Nav} from 'react-bootstrap';
+import {Button, Form, Nav, Navbar} from 'react-bootstrap';
 import {AppActions, singInAction} from '../../../store/actions'
 import {connect} from 'react-redux';
 import {SingInState} from '../../../store/types';
@@ -10,6 +10,9 @@ import {AppState} from '../../../store';
 import {ThunkDispatch} from 'redux-thunk';
 import {Link} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faInstagram} from '@fortawesome/free-brands-svg-icons'
+
 
 interface LinkDispatchProps {
     singInAction: (singIn: boolean) => void
@@ -26,10 +29,13 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AppActions>): Link
 
 const connector = connect(mapStateToProps, mapDispatchToProps)
 
-interface HeaderProps {
-}
+type Props = LinkDispatchProps & SingInState
 
-type Props = HeaderProps & LinkDispatchProps & SingInState
+const style = {
+    display: 'flex',
+    alignItems: 'center',
+    color:'#fff'
+}
 
 
 const Header: React.FC<Props> = (props) => {
@@ -48,6 +54,11 @@ const Header: React.FC<Props> = (props) => {
                     <MenuItems/>
                 </Nav>
                 <Form inline>
+                    <div style={style}>
+                        <span>{t('header.follow')} </span>
+                        <FontAwesomeIcon icon={faInstagram} size={'2x'} style={{margin:'0 .5em', cursor: 'pointer'}}
+                            onClick={() => window.open('https://www.instagram.com/curisconago/', '_blank')}/>
+                    </div>
                     <Button variant="outline-info"
                             onClick={onSingIn}>{props.singIn ? t('sing.out.button') : t('sing.in.button')}</Button>
                 </Form>
