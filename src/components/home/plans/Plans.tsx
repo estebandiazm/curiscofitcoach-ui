@@ -11,7 +11,7 @@ export default class Plans extends Component {
                 title: 'Month',
                 status: 'show',
                 details: false,
-                shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, harum magnam. Architecto deleniti iusto laborum maiores, minus nisi, provident rerum,',
+                imageUrl: 'https://via.placeholder.com/500,',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, harum magnam. Architecto deleniti iusto laborum maiores, minus nisi, provident rerum, sequi temporibus totam ullam voluptatum. Aut fuga ipsum laudantium quasi!',
                 price: 99.9
             },
@@ -19,7 +19,7 @@ export default class Plans extends Component {
                 title: 'Three month',
                 status: 'show',
                 details: false,
-                shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, harum magnam. Architecto deleniti iusto laborum maiores, minus nisi, provident rerum,',
+                imageUrl: 'https://via.placeholder.com/500,',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, harum magnam. Architecto deleniti iusto laborum maiores, minus nisi, provident rerum, sequi temporibus totam ullam voluptatum. Aut fuga ipsum laudantium quasi!',
                 price: 0.0
             },
@@ -27,7 +27,7 @@ export default class Plans extends Component {
                 title: 'Training Online',
                 status: 'show',
                 details: false,
-                shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, harum magnam. Architecto deleniti iusto laborum maiores, minus nisi, provident rerum,',
+                imageUrl: 'https://via.placeholder.com/500',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, harum magnam. Architecto deleniti iusto laborum maiores, minus nisi, provident rerum, sequi temporibus totam ullam voluptatum. Aut fuga ipsum laudantium quasi!',
                 price: 0.0
             }
@@ -51,7 +51,7 @@ export default class Plans extends Component {
                     {this.state.plans
                         .filter(plan => plan.status === 'show')
                         .map((plan: any) => {
-                            return <PlanCard plan={plan} showDetails={this.state.showDetails} key={plan.title}
+                            return <PlanCard plan={plan}  key={plan.title}
                                              onClick={this.showPlanDetails.bind(this, plan.title)}/>
                         })}
                 </Row>
