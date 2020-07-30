@@ -51,7 +51,7 @@ export default class Plans extends Component {
                     {this.state.plans
                         .filter(plan => plan.status === 'show')
                         .map((plan: any) => {
-                            return <PlanCard plan={plan}  key={plan.title}
+                            return <PlanCard plan={plan} key={plan.title}
                                              onClick={this.showPlanDetails.bind(this, plan.title)}/>
                         })}
                 </Row>

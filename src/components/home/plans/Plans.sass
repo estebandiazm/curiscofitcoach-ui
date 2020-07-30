@@ -5,17 +5,14 @@
     align-items: center
   .plan-card
     padding: .5em
-    transition: all .5s
+    transition: all 300ms
     .details-container
       padding: 1em
-      opacity: 0
-      min-width: 300px
       background-color: transparent
       .badge
         font-size: 2em
-      &.show
-        opacity: 1
-        transition: opacity .5s
+      &.hidden
+        display: none
     .card-img-top
       min-width: 200px
     .icon-container
