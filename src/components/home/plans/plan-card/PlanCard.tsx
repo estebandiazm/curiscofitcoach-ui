@@ -24,12 +24,6 @@ export default class PlanCard extends Component<PlanProps> {
         }
     }
 
-    // buildDetail(plan: any) {
-    //     setTimeout(() => {
-    //         this.setState({readyToShowDetails: plan.details})
-    //     }, 800)
-    // }
-
     handleClick(onClick: () => void) {
         this.setState({hidden: 'hidden'});
         onClick();

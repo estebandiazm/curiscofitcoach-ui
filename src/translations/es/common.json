@@ -2,13 +2,24 @@
   "header": {
     "follow": "Siguenos"
   },
-  "sing": {
+  "login": {
     "out": {
       "button": "Cerrar sesión"
     },
     "in": {
       "button": "Iniciar Sesión"
-    }
+    },
+    "email":{
+      "label": "Correo",
+      "placeholder": "Por favor ingrese su correo",
+      "error": "El correo es incorrecto"
+    },
+    "password":{
+      "label": "Contraseña",
+      "placeholder": "Por favor ingresa la contraseña",
+      "error": "La contraseña es incorrecta"
+    },
+    "fail": "Usuario o contraseña incorrectos"
   },
   "menu": {
     "programs": "Programas",

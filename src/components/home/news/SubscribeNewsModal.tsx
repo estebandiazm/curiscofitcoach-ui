@@ -3,21 +3,21 @@ import {Button, Form, Modal} from 'react-bootstrap';
 import {AppState} from '../../../store';
 import {SubscribeNewsState} from '../../../store/types';
 import {ThunkDispatch} from 'redux-thunk';
-import {AppActions, subscribeNewsAction} from '../../../store/actions';
+import {AppActions} from '../../../store/actions';
+import {subscribe as subscribeThunk} from '../../../ducks/newsletter';
 import {connect} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 
 interface LinkDispatchProps {
-    subscribeNewsAction: (show: boolean, email: string) => void
+    subscribe: (state: SubscribeNewsState) => any
 }
 
 const mapStateToProps = (state: AppState): SubscribeNewsState => ({
-    show: state.subscribeNews.show,
     email: state.subscribeNews.email
 });
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AppActions>): LinkDispatchProps => ({
-    subscribeNewsAction: (show: boolean, email: string) => dispatch(subscribeNewsAction(show, email))
+    subscribe: (state:SubscribeNewsState) => dispatch(subscribeThunk(state))
 });
 
 const connector = connect(
@@ -37,7 +37,8 @@ const SubscribeNewsModal = (props: Props) => {
     const {t} = useTranslation('common');
 
     const handleClose = () => {
-        props.subscribeNewsAction(false, '');
+        localStorage.setItem('newsletter', 'ready')
+        setValidated(true)
     }
 
     const handleSubmit = (event: any) => {
@@ -47,12 +48,15 @@ const SubscribeNewsModal = (props: Props) => {
             event.stopPropagation();
             setValidated(true)
         } else {
-            props.subscribeNewsAction(false, event.target.formEmail.value)
+            localStorage.setItem('newsletter', 'ready')
+            props.subscribe({email: event.target.formEmail.value})
         }
     }
 
+    const newsletter = localStorage.getItem('newsletter')
+    console.log('news',newsletter);
     return (
-        <Modal show={props.show} onHide={handleClose}>
+        <Modal show={!newsletter} onHide={handleClose}>
             <Form noValidate validated={validated} onSubmit={(event) => handleSubmit(event)}>
                 <Modal.Header closeButton>
                     <Modal.Title>{t('subscribeNews.title')}</Modal.Title>

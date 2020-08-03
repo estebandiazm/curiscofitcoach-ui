@@ -2,13 +2,24 @@
   "header": {
     "follow": "Follow us"
   },
-  "sing": {
+  "login": {
     "out": {
       "button": "Sing Out"
     },
     "in": {
       "button": "Sing In"
-    }
+    },
+    "email":{
+      "label": "Email",
+      "placeholder": "Please enter your email",
+      "error": "The email is incorrect"
+    },
+    "password":{
+      "label": "Password",
+      "placeholder": "Please enter your password",
+      "error": "The password is incorrect"
+    },
+    "fail": "User or password wrong"
   },
   "menu": {
     "programs": "Programs",
