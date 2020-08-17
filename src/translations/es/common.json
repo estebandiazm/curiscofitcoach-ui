@@ -48,5 +48,25 @@
   },
   "footer": {
     "paymentMethods": "Métodos de pago"
+  },
+  "plans":{
+    "buyButton": "Comprar"
+  },
+  "register": {
+    "name": {
+      "label": "Nombres y Apellidos completos",
+      "placeholder": "Inserte su Nombre y Apellidos completos",
+      "errorMsg": "Please inserte su Nombre y Apellidos completos"
+    },
+    "city": {
+      "label": "Cuidad",
+      "placeholder": "Inserte su ciudad",
+      "errorMsg": "Please inserte su ciudad"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Inserte su email",
+      "errorMsg": "Please inserte su email"
+    }
   }
 }

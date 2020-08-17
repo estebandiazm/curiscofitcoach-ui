@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Form} from 'react-bootstrap';
 
 import {Field, InjectedFormProps, reduxForm} from 'redux-form';
-import FieldFormControl from './FieldFromControl';
+import FieldFormControl from '../common/FieldFromControl';
 import {WithTranslation, withTranslation} from 'react-i18next';
 
 const style = {

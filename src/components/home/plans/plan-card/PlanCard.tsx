@@ -1,15 +1,17 @@
 import React, {Component} from 'react'
 import Col from 'react-bootstrap/Col';
-import {Badge, Card} from 'react-bootstrap';
+import {Badge, Button, Card} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faDollarSign, faPlusCircle} from '@fortawesome/free-solid-svg-icons';
+import {RouteComponentProps, withRouter} from 'react-router';
 
 interface PlanProps {
     plan: any,
     onClick: () => void
 }
+type Props = PlanProps & RouteComponentProps
 
-export default class PlanCard extends Component<PlanProps> {
+class PlanCard extends Component<Props> {
 
     public state = {
         hidden: 'hidden'
@@ -29,8 +31,14 @@ export default class PlanCard extends Component<PlanProps> {
         onClick();
     }
 
+    handleBuyClick() {
+        const {history} = this.props
+        history.push('/register')
+    }
+
 
     render() {
+        console.log('plan props', this.props);
         const {onClick, plan} = this.props;
         const {details, title, imageUrl} = plan;
         const showDetails = this.state.hidden === '' && details
@@ -62,6 +70,7 @@ export default class PlanCard extends Component<PlanProps> {
                             <Card.Text>
                                 <Badge variant="primary"><FontAwesomeIcon icon={faDollarSign}/> {plan.price}</Badge>
                             </Card.Text>
+                            <Button onClick={this.handleBuyClick.bind(this)}>{'Buy'}</Button>
                         </Card.Body>
                     </Card>
                 </div>
@@ -69,3 +78,5 @@ export default class PlanCard extends Component<PlanProps> {
         );
     }
 }
+
+export default withRouter(PlanCard)

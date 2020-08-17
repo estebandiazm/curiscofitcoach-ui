@@ -7,6 +7,7 @@ import NotFound from '../components/NotFound';
 import services from '../services';
 import Loading from '../components/loding';
 import {useHistory} from 'react-router';
+import Register from '../components/register/Register';
 
 const Routes = () => {
 
@@ -35,6 +36,7 @@ const Routes = () => {
         <Switch>
             <Route exact={true} path="/" component={Home}/>
             <Route exact={true} path="/login" component={Login}/>
+            <Route exact={true} path="/register" component={Register}/>
             <Route exact={true} path="/app/dashboard" component={Dashboard}/>
             <Route component={NotFound}/>
         </Switch>

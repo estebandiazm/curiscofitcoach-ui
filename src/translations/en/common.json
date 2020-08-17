@@ -48,5 +48,25 @@
   },
   "footer": {
     "paymentMethods": "Payment Methods"
+  },
+  "plans":{
+    "buyButton": "Buy"
+  },
+  "register": {
+    "name": {
+      "label": "Full name",
+      "placeholder": "Insert full name",
+      "errorMsg": "Please insert full name"
+    },
+    "city": {
+      "label":"City",
+      "placeholder": "Insert City",
+      "errorMsg": "Please insert your city"
+    },
+    "email": {
+      "label":"Email",
+      "placeholder": "Insert Email",
+      "errorMsg": "Please insert your email"
+    }
   }
 }
